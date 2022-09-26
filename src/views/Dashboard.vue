@@ -27,6 +27,7 @@ export default {
       this.events = data.events.events
       this.isLoading = false
     })
+    
   }
 }
 </script>
