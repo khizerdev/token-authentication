@@ -32,13 +32,9 @@ export default new Vuex.Store({
           commit("SET_USER_DATA", data);
         });
     },
-    login({ commit }, credentials) {
-      console.log("hello");
-      return axios
-        .post("//localhost:3000/login", credentials)
-        .then(({ data }) => {
-          commit("SET_USER_DATA", data);
-        });
+    async login({ commit }, credentials) {
+      const { data } = await axios.post("//localhost:3000/login", credentials);
+      commit("SET_USER_DATA", data);
     },
     logout({ commit }) {
       commit("LOGOUT");
